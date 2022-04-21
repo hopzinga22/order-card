@@ -1,0 +1,228 @@
+@import 'variables';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('/images/pattern-background-desktop.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $paleBlue;
+}
+
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    // Adhusters
+    background-color: hsl(0, 0%, 100%);
+    max-width: 100vw;
+    min-height: 100vh;
+    margin: auto;
+    border-radius: 15px;
+
+}
+
+.image-section{
+    img{
+        width: 100%;
+        border-radius: 15px 15px 0px 0px;
+    }
+}
+
+.main-content{
+    .text-area{
+        color: $darkBlue;
+        font-family: $defaultFont;
+        text-align: center;
+        padding-top: 2rem;
+        width: 80%;
+        margin: auto;
+        h1{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1.4rem;
+            opacity: 0.6;
+            font-weight: 400;
+            line-height: 2.2rem;
+        }
+    }
+    .order-section{
+        display: flex;
+        align-items: center;
+        margin: 2.8rem;
+        background-color: $veryPaleBlue;
+        border-radius: 10px;
+        height: 10vh;
+
+        img{
+            min-width: 5vw;
+            margin-left: 1.5rem;
+        }
+        .plan{
+            min-width: 150px;
+            margin-left: .8rem;
+            h2{
+                font-size: 1.5rem;
+                font-weight: 900;
+                color: $darkBlue;
+            }
+            p{
+                opacity: 0.6;
+                font-size: 1.2rem;
+            }
+        }
+        // This styles the link, Change
+        .change-link{
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            padding-left: 5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            a{
+                color: $brightBlue;
+                @include hover-state;
+                text-decoration: none;
+            }
+        }
+    }
+    // The code below styles the buttons
+    .buttons{
+        margin: 40px;
+            .btn-proceed{
+                font-weight: 800;
+                font-size: 1rem;
+                font-family: $defaultFont;
+                border: none;
+                border-radius: .4rem;
+                padding: 20px;
+                width: 100%;
+                background-color: $brightBlue; // dont change
+                color: hsl(0, 0%, 100%); // dont change
+                @include hover-state;
+        }
+        .btn-cancel{
+            font-weight: 800;
+            font-size: 1rem;
+            font-family: $defaultFont;
+            border: none;
+            border-radius: .4rem;
+            padding: 20px;
+            margin-top: 20px;
+            width: 100%;
+            color: $desaturatedBlue;
+            @include hover-state;
+        }
+    }
+}
+
+// Mobile Display
+
+@media screen and (max-width: 50em) {
+    .container{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        // Adhusters
+        background-color: hsl(0, 0%, 100%);
+        min-width: 50vw;
+        min-height: 80vh;
+        margin: auto;
+        border-radius: 40px;
+    
+    }
+    
+    .image-section{
+        img{
+            width: 100%;
+            border-radius: 40px 40px 0px 0px;
+        }
+    }
+    
+    .main-content{
+        .text-area{
+            color: $darkBlue;
+            font-family: $defaultFont;
+            text-align: center;
+            padding-top: 2rem;
+            width: 80%;
+            margin: auto;
+            h1{
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1.4rem;
+                opacity: 0.6;
+                font-weight: 400;
+                line-height: 2.2rem;
+            }
+        }
+        .order-section{
+           display: flex;
+           align-items: center;
+            background-color: $veryPaleBlue;
+            border-radius: 10px;
+            height: 10vh;
+            // background: #000;
+    
+            img{
+                min-width: 5vw;
+                margin-left: -2rem;
+            }
+            .plan{
+                h2{
+                    color: $darkBlue;
+                }
+                p{
+                    opacity: 0.6;
+                }
+            }
+            .change-link{
+                padding-left: 10px;
+                font-size: 1.2rem;
+                font-weight: 700;
+                a{
+                    color: $brightBlue;
+                    @include hover-state;
+                }
+            }
+        }
+        .buttons{
+            margin: 40px;
+                .btn-proceed{
+                    font-weight: 800;
+                    font-size: 1rem;
+                    font-family: $defaultFont;
+                    border: none;
+                    border-radius: .4rem;
+                    padding: 20px;
+                    width: 100%;
+                    background-color: $brightBlue; // dont change
+                    color: hsl(0, 0%, 100%); // dont change
+                    @include hover-state;
+            }
+            .btn-cancel{
+                font-weight: 800;
+                font-size: 1rem;
+                font-family: $defaultFont;
+                border: none;
+                border-radius: .4rem;
+                padding: 20px;
+                margin-top: 20px;
+                width: 100%;
+                color: $desaturatedBlue;
+                @include hover-state;
+            }
+        }
+    }
+}
